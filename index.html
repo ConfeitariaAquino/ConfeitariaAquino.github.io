@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aquino Confeitaria — bolos artesanais com pronta entrega. Festival de Fatias R$22, fornadas pequenas, ingredientes frescos, feitos no dia." />
+  <meta name="theme-color" content="#94B26F" />
+  <meta property="og:title" content="Aquino Confeitaria — Bolos Artesanais" />
+  <meta property="og:description" content="Festival de Fatias por R$22 — bolos artesanais feitos no dia, pronta entrega." />
+  <meta property="og:type" content="website" />
+  <title>Aquino Confeitaria — Bolos Artesanais | Festival de Fatias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --accent: #94B26F;
+      --accent-dark: #6B8E5A;
+      --accent-soft: #E8EFD9;
+      --cream: #FAF6EC;
+      --ink: #2D2417;
+      --muted: #8B8567;
+      --line: #D5DCC1;
+      --gold: #C9A961;
+      --shadow: 0 8px 30px rgba(45, 36, 23, 0.08);
+      --shadow-hover: 0 14px 44px rgba(107, 142, 90, 0.22);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--accent); text-decoration: none; }
+
+    /* ===== Hero ===== */
+    .hero {
+      background:
+        radial-gradient(circle at 20% 0%, rgba(148, 178, 111, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 100%, rgba(201, 169, 97, 0.12) 0%, transparent 40%),
+        linear-gradient(180deg, #F2F6E2 0%, var(--cream) 100%);
+      padding: 64px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(148, 178, 111, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .brand-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+      position: relative;
+    }
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.05;
+      letter-spacing: -0.5px;
+      position: relative;
+    }
+    .brand-tag {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--ink);
+      margin-top: 6px;
+      position: relative;
+    }
+    .hero-info {
+      margin-top: 28px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      position: relative;
+    }
+    .hero-info strong { color: var(--ink); font-weight: 600; }
+    .hero-divider {
+      width: 60px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+      margin: 24px auto 0;
+      opacity: 0.85;
+      position: relative;
+    }
+
+    /* ===== Festival ribbon ===== */
+    .festival-ribbon {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: #fff;
+      padding: 28px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .festival-ribbon::before,
+    .festival-ribbon::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 60px; height: 1px;
+      background: rgba(255,255,255,0.4);
+    }
+    .festival-ribbon::before { left: 16px; }
+    .festival-ribbon::after { right: 16px; }
+    .festival-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.92;
+    }
+    .festival-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      margin: 4px 0 6px;
+      letter-spacing: 0.5px;
+    }
+    .festival-title em {
+      font-style: italic;
+      font-weight: 400;
+      font-size: 0.7em;
+      vertical-align: middle;
+      opacity: 0.85;
+    }
+    .festival-price {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      background: #fff;
+      color: var(--accent-dark);
+      padding: 10px 22px;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      margin-top: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    }
+    .festival-price small { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; opacity: 0.75; font-weight: 600; }
+    .festival-price b { font-size: 22px; }
+
+    /* ===== Section ===== */
+    section { padding: 56px 24px; }
+    .section-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      text-align: center;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .section-date {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    /* ===== Cake cards ===== */
+    .menu {
+      max-width: 480px;
+      margin: 0 auto;
+      display: grid;
+      gap: 24px;
+    }
+    .cake {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border: 1px solid rgba(213, 220, 193, 0.5);
+    }
+    .cake:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+
+    /* ===== CSS-art cake slices (layered) ===== */
+    .slice {
+      aspect-ratio: 4 / 3;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #FBF8EE 0%, #F2EEDD 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .slice-shape {
+      position: absolute;
+      bottom: 18%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 64%;
+      height: 62%;
+      border-radius: 4px 4px 6px 6px;
+      box-shadow: 0 8px 18px rgba(45, 36, 23, 0.18);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .slice-layer { width: 100%; flex-shrink: 0; }
+    .slice-shadow {
+      position: absolute;
+      bottom: 14%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 8px;
+      background: radial-gradient(ellipse, rgba(45,36,23,0.18) 0%, transparent 70%);
+      filter: blur(2px);
+    }
+    .slice-topping {
+      position: absolute;
+      top: 6%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      font-size: 22px;
+      letter-spacing: 4px;
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.15));
+    }
+
+    /* === Layer flavours === */
+    .layer-paodelo  { background: linear-gradient(180deg, #F4E4B8 0%, #E5D094 100%); }
+    .layer-chocolate{ background: linear-gradient(180deg, #4A2A1B 0%, #2E1810 100%); }
+    .layer-trufa-branca{ background: linear-gradient(180deg, #FAF4E5 0%, #ECE0C2 100%); }
+    .layer-trufa-limao { background: linear-gradient(180deg, #F8EFA8 0%, #DFD074 100%); }
+    .layer-geleia-vermelha{ background: linear-gradient(180deg, #B8243A 0%, #781626 100%); }
+    .layer-trufa-brigadeiro{ background: linear-gradient(180deg, #3A1E10 0%, #20100A 100%); }
+    .layer-trufa-ninho { background: linear-gradient(180deg, #FAF0DC 0%, #E8D8B8 100%); }
+    .layer-nutella     { background: linear-gradient(180deg, #4A2510 0%, #2C1407 100%); }
+    .layer-trufa-maracuja{ background: linear-gradient(180deg, #F3CD52 0%, #D6A92C 100%); }
+    .layer-trufa-choco50{ background: linear-gradient(180deg, #5C2C18 0%, #3A1A0E 100%); }
+    .layer-pudim       { background: linear-gradient(180deg, #F5DC9C 0%, #DBBE6A 100%); }
+    .layer-doce-leite  { background: linear-gradient(180deg, #C68638 0%, #8E5A1F 100%); }
+    .layer-uva-roxa    { background: linear-gradient(180deg, #6B3A78 0%, #421E48 100%); }
+    .layer-merengue    {
+      background:
+        radial-gradient(circle at 20% 100%, #FFFCF5 8%, transparent 10%),
+        radial-gradient(circle at 50% 100%, #FFFCF5 10%, transparent 12%),
+        radial-gradient(circle at 80% 100%, #FFFCF5 8%, transparent 10%),
+        linear-gradient(180deg, #FFFEF8 0%, #F5EFD9 100%);
+    }
+
+    .topping-berries::before { content: '🍓 🫐 🍓'; }
+    .topping-strawberry::before { content: '🍓'; }
+    .topping-grape::before { content: '🍇'; }
+    .topping-flake::before { content: '✦  ✦  ✦'; font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 4px; }
+
+    /* Plate */
+    .slice::after {
+      content: '';
+      position: absolute;
+      bottom: 8%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 84%;
+      height: 6px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, #E8E0CC 100%);
+      border-radius: 50% 50% 4px 4px / 100% 100% 4px 4px;
+      box-shadow: 0 3px 6px rgba(45,36,23,0.1);
+      z-index: 1;
+    }
+
+    .slice-tag {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--accent-dark);
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 100px;
+      backdrop-filter: blur(2px);
+      z-index: 3;
+    }
+
+    .cake-body { padding: 22px 22px 24px; }
+    .cake-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .cake-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .cake-price {
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      white-space: nowrap;
+    }
+    .cake-price small { font-size: 11px; font-weight: 500; color: var(--muted); display: block; text-align: right; letter-spacing: 0.5px; }
+    .cake-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+    .cake-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .badge-stock { background: var(--accent-soft); color: var(--accent-dark); }
+    .badge-fresh { background: #E8F0E1; color: #4A6B33; }
+
+    .btn-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(148, 178, 111, 0.35);
+    }
+    .btn-whatsapp:hover { background: var(--accent-dark); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(107, 142, 90, 0.45); }
+    .btn-whatsapp:active { transform: scale(0.98); }
+    .btn-whatsapp svg { width: 18px; height: 18px; }
+
+    /* ===== Como funciona ===== */
+    .how { background: #fff; }
+    .steps {
+      max-width: 480px;
+      margin: 0 auto;
+      display: grid;
+      gap: 20px;
+    }
+    .step { display: flex; gap: 16px; align-items: flex-start; }
+    .step-num {
+      flex-shrink: 0;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-text { font-size: 15px; line-height: 1.5; padding-top: 6px; }
+    .step-text strong { color: var(--ink); }
+
+    /* ===== Sobre ===== */
+    .about { background: linear-gradient(180deg, var(--cream) 0%, var(--accent-soft) 100%); }
+    .about-content { max-width: 480px; margin: 0 auto; text-align: center; }
+    .about-photo {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      background:
+        radial-gradient(circle at 35% 35%, #F4D5C3 0%, transparent 55%),
+        linear-gradient(135deg, #E8B89C 0%, #B5836A 100%);
+      box-shadow: var(--shadow);
+      border: 4px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.95);
+      letter-spacing: 1px;
+      text-align: center;
+      padding: 8px;
+    }
+    .about-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      line-height: 1.55;
+      color: var(--ink);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+    .about-sign {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--accent-dark);
+      margin-top: 18px;
+    }
+
+    /* ===== Depoimentos ===== */
+    .testimonials { background: #fff; }
+    .testimonial-grid {
+      max-width: 480px;
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+    }
+    .testimonial {
+      padding: 22px;
+      background: var(--cream);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .stars { color: var(--gold); font-size: 14px; margin-bottom: 8px; letter-spacing: 2px; }
+    .testimonial-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .testimonial-author { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--ink);
+      color: #E8D7DD;
+      padding: 40px 24px 32px;
+      text-align: center;
+    }
+    footer .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    footer .footer-tag {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 16px;
+      color: var(--accent-soft);
+      margin-bottom: 24px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+    .footer-link {
+      color: #E8D7DD;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border: 1px solid rgba(232, 215, 221, 0.25);
+      border-radius: 100px;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .footer-link:hover { background: rgba(232, 215, 221, 0.08); border-color: rgba(232, 215, 221, 0.5); }
+    .footer-link svg { width: 14px; height: 14px; }
+    .footer-meta { font-size: 12px; color: rgba(232, 215, 221, 0.55); line-height: 1.7; }
+
+    /* ===== Sticky WhatsApp button ===== */
+    .floating-cta {
+      position: fixed;
+      bottom: 18px; right: 18px;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+      z-index: 100;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .floating-cta:hover { transform: scale(1.08); }
+    .floating-cta svg { width: 28px; height: 28px; }
+
+    /* ===== Desktop tweaks ===== */
+    @media (min-width: 720px) {
+      .hero { padding: 88px 24px 64px; }
+      .brand-name { font-size: 64px; }
+      .brand-tag { font-size: 26px; }
+      section { padding: 72px 24px; }
+      .section-title { font-size: 40px; }
+      .festival-title { font-size: 44px; }
+      .menu { max-width: 720px; grid-template-columns: 1fr 1fr; }
+      .testimonial-grid { max-width: 720px; grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 1080px) {
+      .menu { max-width: 1080px; grid-template-columns: 1fr 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="brand-mark">Bolos Artesanais</div>
+    <h1 class="brand-name">Aquino Confeitaria</h1>
+    <div class="brand-tag">feitos hoje, com carinho</div>
+    <div class="hero-info">
+      <strong>Pronta entrega</strong> &nbsp;·&nbsp; Fornadas pequenas<br />
+      Pedidos até <strong>16h</strong> &nbsp;·&nbsp; Retirada das <strong>14h às 19h</strong>
+    </div>
+    <div class="hero-divider"></div>
+  </header>
+
+  <div class="festival-ribbon">
+    <div class="festival-eyebrow">Cardápio do dia</div>
+    <h2 class="festival-title">Festival <em>de</em> Fatias</h2>
+    <div class="festival-price">
+      <small>Fatias</small>
+      <b>R$ 22,00</b>
+    </div>
+  </div>
+
+  <section id="cardapio">
+    <div class="section-eyebrow">Sabores artesanais</div>
+    <h2 class="section-title">Disponíveis hoje</h2>
+    <div class="section-date" id="data-hoje"></div>
+
+    <div class="menu">
+
+      <article class="cake">
+        <div class="slice">
+          <div class="slice-tag">★ Mais pedido</div>
+          <div class="slice-shape">
+            <div class="slice-layer layer-trufa-branca" style="height: 22%"></div>
+            <div class="slice-layer layer-paodelo" style="height: 14%"></div>
+            <div class="slice-layer layer-trufa-limao" style="height: 16%"></div>
+            <div class="slice-layer layer-geleia-vermelha" style="height: 14%"></div>
+            <div class="slice-layer layer-paodelo" style="height: 14%"></div>
+            <div class="slice-layer layer-trufa-branca" style="height: 20%"></div>
+          </div>
+          <div class="slice-shadow"></div>
+          <div class="slice-topping topping-berries"></div>
+        </div>
+        <div class="cake-body">
+          <div class="cake-row">
+            <h3 class="cake-name">Limão Siciliano com Frutas Vermelhas</h3>
+            <span class="cake-price">R$ 22<small>fatia</small></span>
+          </div>
+          <p class="cake-desc">Massa pão de ló, trufa de limão siciliano com geleia de frutas vermelhas.</p>
+          <div class="cake-meta">
+            <span class="badge badge-stock">Restam 6 fatias</span>
+            <span class="badge badge-fresh">Feito hoje</span>
+          </div>
+          <a class="btn-whatsapp" href="#" data-cake="Limão Siciliano com Frutas Vermelhas" data-price="22">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.92 7.92 0 0 0-6.78 11.96L4 20l4.13-1.24a7.93 7.93 0 0 0 3.92 1.04h.01a7.93 7.93 0 0 0 5.55-13.48z"/></svg>
+            Pedir pelo WhatsApp
+          </a>
+        </div>
+      </article>
+
+      <article class="cake">
+        <div class="slice">
+          <div class="slice-shape">
+            <div class="slice-layer layer-merengue" style="height: 26%"></div>
+            <div class="slice-layer layer-trufa-branca" style="height: 18%"></div>
+            <div class="slice-layer layer-paodelo" style="height: 18%"></div>
+            <div class="slice-layer layer-trufa-branca" style="height: 18%"></div>
+            <div class="slice-layer layer-paodelo" style="height: 20%"></div>
+          </div>
+          <div class="slice-shadow"></div>
+          <div class="slice-topping topping-strawberry"></div>
+        </div>
+        <div class="cake-body">
+          <div class="cake-row">
+            <h3 class="cake-name">Merengue de Morango</h3>
+            <span class="cake-price">R$ 22<small>fatia</small></span>
+          </div>
+          <p class="cake-desc">Massa pão de ló, trufa branca com morangos e suspiros.</p>
+          <div class="cake-meta">
+            <span class="badge badge-stock">Restam 4 fatias</span>
+            <span class="badge badge-fresh">Feito hoje</span>
+          </div>
+          <a class="btn-whatsapp" href="#" data-cake="Merengue de Morango" data-price="22">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.92 7.92 0 0 0-6.78 11.96L4 20l4.13-1.24a7.93 7.93 0 0 0 3.92 1.04h.01a7.93 7.93 0 0 0 5.55-13.48z"/></svg>
+            Pedir pelo WhatsApp
+          </a>
+        </div>
+      </article>
+
+      <article class="cake">
+        <div class="slice">
+          <div class="slice-shape">
+            <div class="slice-layer layer-trufa-brigadeiro" style="height: 22%"></div>
+            <div class="slice-layer layer-chocolate" style="height: 16%"></div>
+            <div class="slice-layer layer-trufa-brigadeiro" style="height: 14%"></div>
+            <div class="slice-layer layer-chocolate" style="height: 16%"></div>
+            <div class="slice-layer layer-trufa-brigadeiro" style="height: 14%"></div>
+            <div class="slice-layer layer-chocolate" style="height: 18%"></div>
+          </div>
+          <div class="slice-shadow"></div>
+          <div class="slice-topping topping-flake"></div>
+        </div>
+        <div class="cake-body">
+          <div class="cake-row">
+            <h3 class="cake-name">Matilda</h3>
+            <span class="cake-price">R$ 22<small>fatia</small></span>
+          </div>
+          <p class="cake-desc">Massa de chocolate com trufa de brigadeiro — homenagem ao bolo mais cobiçado da literatura.</p>
+          <div class="cake-meta">
+            <span class="badge badge-stock">Restam 5 fatias</span>
+            <span class="badge badge-fresh">Feito hoje</span>
+          </div>
+          <a class="btn-whatsapp" href="#" data-cake="Matilda" data-price="22">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.92 7.92 0 0 0-6.78 11.96L4 20l4.13-1.24a7.93 7.93 0 0 0 3.92 1.04h.01a7.93 7.93 0 0 0 5.55-13.48z"/></svg>
+            Pedir pelo WhatsApp
+          </a>
+        </div>
+      </article>
+
+      <article class="cake">
+        <div class="slice">
+          <div class="slice-shape">
+            <div class="slice-layer layer-trufa-ninho" style="height: 22%"></div>
+            <div class="slice-layer layer-paodelo" style="height: 16%"></div>
+            <div class="slice-layer layer-nutella" style="height: 14%"></div>
+            <div class="slice-layer layer-trufa-ninho" style="height: 14%"></div>
+            <div class="slice-layer layer-paodelo" style="height: 16%"></div>
+            <div class="slice-layer layer-nutella" style="height: 18%"></div>
+          </div>
+          <div class="slice-shadow"></div>
+          <div class="slice-topping topping-flake"></div>
+        </div>
+        <div class="cake-body">
+          <div class="cake-row">
+            <h3 class="cake-name">Ninho com Nutella</h3>
+            <span class="cake-price">R$ 22<small>fatia</small></span>
+          </div>
+          <p class="cake-desc">Massa pão de ló, com trufa de ninho e Nutella — clássico irresistível.</p>
+          <div class="cake-meta">
+            <span class="badge badge-stock">Restam 3 fatias</span>
+            <span class="badge badge-fresh">Feito hoje</span>
+          </div>
+          <a class="btn-whatsapp" href="#" data-cake="Ninho com Nutella" data-price="22">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.92 7.92 0 0 0-6.78 11.96L4 20l4.13-1.24a7.93 7.93 0 0 0 3.92 1.04h.01a7.93 7.93 0 0 0 5.55-13.48z"/></svg>
+            Pedir pelo WhatsApp
+          </a>
+        </div>
+      </article>
+
+      <article class="cake">
+        <div class="slice">
+          <div class="slice-shape">
+            <div class="slice-layer layer-trufa-choco50" style="height: 20%"></div>
+            <div class="slice-layer layer-chocolate" style="height: 14%"></div>
+            <div class="slice-layer layer-trufa-maracuja" style="height: 16%"></div>
+            <div class="slice-layer layer-chocolate" style="height: 14%"></div>
+            <div class="slice-layer layer-trufa-maracuja" style="height: 16%"></div>
+            <div class="slice-layer layer-chocolate" style="height: 20%"></div>
+          </div>
+          <div class="slice-shadow"></div>
+          <div class="slice-topping topping-flake"></div>
+        </div>
+        <div class="cake-body">
+          <div class="cake-row">
+            <h3 class="cake-name">Maracujá com Chocolate</h3>
+            <span class="cake-price">R$ 22<small>fatia</small></span>
+          </div>
+          <p class="cake-desc">Massa de chocolate com trufa de maracujá e trufa de chocolate 50% — equilíbrio perfeito.</p>
+          <div class="cake-meta">
+            <span class="badge badge-stock">Restam 4 fatias</span>
+            <span class="badge badge-fresh">Feito hoje</span>
+          </div>
+          <a class="btn-whatsapp" href="#" data-cake="Maracujá com Chocolate" data-price="22">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.92 7.92 0 0 0-6.78 11.96L4 20l4.13-1.24a7.93 7.93 0 0 0 3.92 1.04h.01a7.93 7.93 0 0 0 5.55-13.48z"/></svg>
+            Pedir pelo WhatsApp
+          </a>
+        </div>
+      </article>
+
+      <article class="cake">
+        <div class="slice">
+          <div class="slice-shape">
+            <div class="slice-layer layer-doce-leite" style="height: 14%"></div>
+            <div class="slice-layer layer-pudim" style="height: 28%"></div>
+            <div class="slice-layer layer-paodelo" style="height: 22%"></div>
+            <div class="slice-layer layer-trufa-branca" style="height: 14%"></div>
+            <div class="slice-layer layer-paodelo" style="height: 22%"></div>
+          </div>
+          <div class="slice-shadow"></div>
+        </div>
+        <div class="cake-body">
+          <div class="cake-row">
+            <h3 class="cake-name">Bolo Pudim</h3>
+            <span class="cake-price">R$ 22<small>fatia</small></span>
+          </div>
+          <p class="cake-desc">Massa pão de ló, com pudim e doce de leite caseiro — o aconchego em fatia.</p>
+          <div class="cake-meta">
+            <span class="badge badge-stock">Restam 5 fatias</span>
+            <span class="badge badge-fresh">Feito hoje</span>
+          </div>
+          <a class="btn-whatsapp" href="#" data-cake="Bolo Pudim" data-price="22">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.92 7.92 0 0 0-6.78 11.96L4 20l4.13-1.24a7.93 7.93 0 0 0 3.92 1.04h.01a7.93 7.93 0 0 0 5.55-13.48z"/></svg>
+            Pedir pelo WhatsApp
+          </a>
+        </div>
+      </article>
+
+      <article class="cake">
+        <div class="slice">
+          <div class="slice-shape">
+            <div class="slice-layer layer-trufa-choco50" style="height: 20%"></div>
+            <div class="slice-layer layer-trufa-branca" style="height: 16%"></div>
+            <div class="slice-layer layer-uva-roxa" style="height: 14%"></div>
+            <div class="slice-layer layer-paodelo" style="height: 16%"></div>
+            <div class="slice-layer layer-trufa-branca" style="height: 16%"></div>
+            <div class="slice-layer layer-paodelo" style="height: 18%"></div>
+          </div>
+          <div class="slice-shadow"></div>
+          <div class="slice-topping topping-grape"></div>
+        </div>
+        <div class="cake-body">
+          <div class="cake-row">
+            <h3 class="cake-name">Bombom de Uva</h3>
+            <span class="cake-price">R$ 22<small>fatia</small></span>
+          </div>
+          <p class="cake-desc">Massa pão de ló, com trufa branca e uvas, e trufa de chocolate 50% — descoberta da casa.</p>
+          <div class="cake-meta">
+            <span class="badge badge-stock">Restam 3 fatias</span>
+            <span class="badge badge-fresh">Feito hoje</span>
+          </div>
+          <a class="btn-whatsapp" href="#" data-cake="Bombom de Uva" data-price="22">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.92 7.92 0 0 0-6.78 11.96L4 20l4.13-1.24a7.93 7.93 0 0 0 3.92 1.04h.01a7.93 7.93 0 0 0 5.55-13.48z"/></svg>
+            Pedir pelo WhatsApp
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="section-eyebrow">Simples assim</div>
+    <h2 class="section-title">Como funciona</h2>
+    <div class="section-date">do clique ao bolo na sua mesa</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Escolha o sabor</strong> no Festival de Fatias logo aqui em cima.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Clique em "Pedir pelo WhatsApp".</strong> A mensagem já vai pré-pronta — é só confirmar a quantidade.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Pague pelo Pix.</strong> Envio a chave na conversa, é rapidinho.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Retire ou receba</strong> dentro da janela combinada — fatia perfeita, embalagem caprichada.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-content">
+      <div class="about-photo">trocar pela foto da Karoline</div>
+      <div class="section-eyebrow">Quem faz</div>
+      <h2 class="section-title">Oi, sou a Karoline</h2>
+      <p class="about-text" style="margin-top: 18px;">
+        Faço bolos artesanais em casa, em fornadas pequenas, todos os dias. Uso ingredientes frescos, sem conservantes, e cada fatia sai do balcão pensando em quem vai recebê-la. Não é produção em escala — é doce de verdade, feito com tempo.
+      </p>
+      <div class="about-sign">— Karoline</div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="section-eyebrow">Quem provou</div>
+    <h2 class="section-title">O que dizem por aí</h2>
+    <div class="section-date" style="margin-bottom: 32px;"></div>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"A Matilda da Karol é uma viagem ao chocolate de verdade. Massa fofinha e o brigadeiro… socorro. Já encomendei três vezes esse mês."</p>
+        <div class="testimonial-author">— Mariana S., cliente desde 2025</div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Pedi de manhã, retirei à tarde, ainda morno. Atendimento super atencioso e o Bolo Pudim virou tradição lá em casa nos domingos."</p>
+        <div class="testimonial-author">— Rafael T.</div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Já encomendei pra aniversário, pra reunião de trabalho e até por gula mesmo. Nunca decepciona. O Limão Siciliano com Frutas Vermelhas é divino."</p>
+        <div class="testimonial-author">— Camila F.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-brand">Aquino Confeitaria</div>
+    <div class="footer-tag">bolos artesanais — por Karoline Aquino</div>
+    <div class="footer-links">
+      <a class="footer-link" href="https://wa.me/5511956767220" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.92 7.92 0 0 0-6.78 11.96L4 20l4.13-1.24a7.93 7.93 0 0 0 3.92 1.04h.01a7.93 7.93 0 0 0 5.55-13.48z"/></svg>
+        WhatsApp
+      </a>
+      <a class="footer-link" href="https://instagram.com/tradicaoaquino" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85 0 3.2-.01 3.58-.07 4.85-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07-3.2 0-3.58-.01-4.85-.07-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12c0-3.2.01-3.58.07-4.85.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.94c-3.15 0-3.5.01-4.74.07-1.07.05-1.65.23-2.04.38-.51.2-.88.44-1.26.82-.38.38-.62.75-.82 1.26-.15.39-.33.97-.38 2.04-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.07.23 1.65.38 2.04.2.51.44.88.82 1.26.38.38.75.62 1.26.82.39.15.97.33 2.04.38 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.07-.05 1.65-.23 2.04-.38.51-.2.88-.44 1.26-.82.38-.38.62-.75.82-1.26.15-.39.33-.97.38-2.04.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.07-.23-1.65-.38-2.04a3.4 3.4 0 0 0-.82-1.26 3.4 3.4 0 0 0-1.26-.82c-.39-.15-.97-.33-2.04-.38-1.24-.06-1.59-.07-4.74-.07zm0 3.3a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2zm0 1.94a2.66 2.66 0 1 0 0 5.32 2.66 2.66 0 0 0 0-5.32zm5.85-2.16a1.08 1.08 0 1 1-2.15 0 1.08 1.08 0 0 1 2.15 0z"/></svg>
+        @tradicaoaquino
+      </a>
+    </div>
+    <div class="footer-meta">
+      Atendimento em [bairro/cidade]<br />
+      © Aquino Confeitaria · Todos os direitos reservados
+    </div>
+  </footer>
+
+  <a class="floating-cta" href="https://wa.me/5511956767220?text=Ol%C3%A1%20Karoline!%20Vim%20pelo%20site%20e%20quero%20pedir%20do%20Festival%20de%20Fatias." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.92 7.92 0 0 0-6.78 11.96L4 20l4.13-1.24a7.93 7.93 0 0 0 3.92 1.04h.01a7.93 7.93 0 0 0 5.55-13.48z"/></svg>
+  </a>
+
+  <script>
+    const WHATSAPP_NUMBER = "5511956767220";
+    const dias = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
+    const meses = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+    const hoje = new Date();
+    document.getElementById("data-hoje").textContent =
+      dias[hoje.getDay()] + ", " + hoje.getDate() + " de " + meses[hoje.getMonth()];
+
+    document.querySelectorAll(".btn-whatsapp[data-cake]").forEach(btn => {
+      const cake = btn.dataset.cake;
+      const price = btn.dataset.price;
+      const msg =
+        "Olá Karoline! Vim pelo site, vi o Festival de Fatias.%0A%0A" +
+        "Quero pedir: " + encodeURIComponent(cake) + " — R$ " + price + " por fatia.%0A%0A" +
+        "Quantas fatias: ___";
+      btn.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + msg;
+      btn.target = "_blank";
+      btn.rel = "noopener";
+    });
+  </script>
+
+</body>
+</html>
